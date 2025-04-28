@@ -14,15 +14,19 @@ installCursor() {
 
         echo "Creating .desktop entry for Cursor..."
         sudo bash -c "cat > $DESKTOP_ENTRY_PATH" <<EOL
-[Desktop Entry]
-Name=Cursor AI
-Exec=$APPIMAGE_PATH --no-sandbox
-Icon=$ICON_PATH
-Type=Application
-Categories=Development;
-EOL
+                
+        [Desktop Entry]
+        Name=Cursor AI
+        Exec=$APPIMAGE_PATH --no-sandbox
+        Icon=$ICON_PATH
+        Type=Application
+        Categories=Development;
+        EOL
 
         echo "Cursor AI IDE installation complete. You can find it in your application menu."
+        
+        sudo apt install fuse
+        
     else
         echo "Cursor AI IDE is already installed."
     fi
